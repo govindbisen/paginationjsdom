@@ -11,8 +11,7 @@ fetch(
     data.forEach((e, i) => {
       p.innerHTML += `
        ${i + 1}<li>name:${e.name}</li>
-       <li> email: ${e.email}  </li>
-       `;
+       <li> email: ${e.email}  </li>`;
     });
   });
 

@@ -14,3 +14,17 @@ git push -u origin main
 git remote add origin https://github.com/govindbisen/paginationjsdom.git
 git branch -M main
 git push -u origin main
+
+
+// what i do...
+git add .
+git commit -m "message of commit"
+git push origin main
+
+ - my design 
+  TODO : first [previous] 5 6 7 8 [next] last  
+
+  - first = 0
+  - last  = total no of record / no of person per page
+  - next = id + 1
+  - previous = id + 1 
