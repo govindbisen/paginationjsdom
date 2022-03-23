@@ -12,16 +12,24 @@ async function pagination() {
 
   const noOfPeoplePerPage = 5;
   const currentPage = 1;
+  const text = document.createElement("p");
 
   function displayPeople(i) {
+    text.innerText = "";
     console.log(i);
     for (
       let index = i * noOfPeoplePerPage - 5;
       index <= i * noOfPeoplePerPage - 1;
       index++
     ) {
+      // text.innerText = "";
       const element = data[index];
       console.log(element);
+
+      text.innerText += `${element.name} `;
+      text.innerHTML += "</br>";
+
+      container.appendChild(text);
     }
   }
 
