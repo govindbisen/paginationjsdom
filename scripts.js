@@ -1,4 +1,6 @@
 console.log("visible...");
+var currentPageforPrevNext;
+
 var container = document.getElementById("container");
 
 let p = document.createElement("p");
@@ -17,6 +19,9 @@ async function pagination() {
   function displayPeople(i) {
     text.innerText = "";
     console.log(i);
+    if (i > 1 && i < 20) {
+      currentPageforPrevNext = i;
+    }
     for (
       let index = i * noOfPeoplePerPage - 5;
       index <= i * noOfPeoplePerPage - 1;
@@ -43,6 +48,20 @@ async function pagination() {
     displayPeople(data.length / noOfPeoplePerPage + currentPage - 1)
   );
   container.appendChild(buttonlast);
+
+  const nextButton = document.createElement("BUTTON");
+  nextButton.innerText = "next";
+  nextButton.addEventListener("click", () =>
+    displayPeople(currentPageforPrevNext + 1)
+  );
+  container.appendChild(nextButton);
+
+  const preButton = document.createElement("BUTTON");
+  preButton.innerText = "prev";
+  preButton.addEventListener("click", () =>
+    displayPeople(currentPageforPrevNext - 1)
+  );
+  container.appendChild(preButton);
 
   for (
     let i = currentPage;
