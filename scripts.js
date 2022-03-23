@@ -32,6 +32,17 @@ async function pagination() {
       container.appendChild(text);
     }
   }
+  const buttonfirst = document.createElement("BUTTON");
+  buttonfirst.innerText = "first";
+  buttonfirst.addEventListener("click", () => displayPeople(1));
+  container.appendChild(buttonfirst);
+
+  const buttonlast = document.createElement("BUTTON");
+  buttonlast.innerText = "last";
+  buttonlast.addEventListener("click", () =>
+    displayPeople(data.length / noOfPeoplePerPage + currentPage - 1)
+  );
+  container.appendChild(buttonlast);
 
   for (
     let i = currentPage;
@@ -44,6 +55,7 @@ async function pagination() {
     container.appendChild(button);
   }
 }
+
 pagination();
 
 container.appendChild(p);
